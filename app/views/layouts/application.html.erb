@@ -6,11 +6,33 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- Theme Stylesheets -->
+    <%= stylesheet_link_tag "/vendor/css/bootstrap.min", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "/vendor/css/slick", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "/vendor/css/slick-theme", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "/vendor/css/nouislider.min", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "/vendor/css/font-awesome.min", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "/vendor/css/style", "data-turbo-track": "reload" %>
+
+    <!-- Main Application Stylesheet -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <%= render "common/header" %>
     <%= yield %>
+    <%= render "common/footer" %>
+    
+    <!-- Theme JavaScripts -->
+    <%= javascript_include_tag "/vendor/js/jquery.min", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/vendor/js/bootstrap.min", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/vendor/js/slick.min", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/vendor/js/nouislider.min", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/vendor/js/jquery.zoom.min", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/vendor/js/main", "data-turbo-track": "reload" %>
   </body>
 </html>
