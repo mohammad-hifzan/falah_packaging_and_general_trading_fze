@@ -6,5 +6,5 @@ class Product < ApplicationRecord
   validates :slug, presence: true, uniqueness: true
   validates :category, presence: true
 
-  enum :display_type, { new: 0, top: 1 }
+  enum :display_type, { latest: 0, top: 1 }
 end
