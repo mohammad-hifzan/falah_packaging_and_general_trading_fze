@@ -1,8 +1,10 @@
-#!/bin/bash -e
+#!/bin/bash
+set -e
 
-# If running the rails server then create or migrate existing database
-if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
-  ./bin/rails db:prepare
-fi
+echo "Preparing database..."
+bundle exec rails db:prepare
 
-exec "${@}"
+echo "Seeding database..."
+bundle exec rails db:seed
+
+exec "$@"
